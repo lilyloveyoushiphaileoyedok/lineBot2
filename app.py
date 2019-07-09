@@ -22,9 +22,16 @@ def callback():
     decoded = json.loads(json_line)
     user = decoded["events"][0]['replyToken']
     userText = decoded["events"][0]['message']['text']
-    sendText(user,userText)
-    return '',200
+    #sendText(user,userText)
+     if (adam == 'nihao') :
+        sengtext(user,'nihao')
+    elif (adam == 'zaijian') :
+   sendtext(user,'mingtianjian')
+    else :
+       sendtext(user,'ว่าไงคนสวยยยยยยยยยยยยยยยยยยยยยยยยย')
 
+    return '',200
+ 
 def sendText(user, text):
   LINE_API = 'https://api.line.me/v2/bot/message/reply'
   headers = {
